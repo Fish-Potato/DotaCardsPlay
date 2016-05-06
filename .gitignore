@@ -1,0 +1,17 @@
+deploy/.project
+repository/.classpath
+canal/.settings/
+repository/.settings/
+canal/.project
+canal/.classpath
+assistant/.settings/
+assistant/.project
+assistant/.classpath
+repository/.project
+.settings/
+.project
+dataSynchronize/.classpath
+dataSync/.classpath
+dataSynchronize/target/
+product/catalina.home_IS_UNDEFINED/
+.idea

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 启动@AspectJ支持-->
+    <aop:aspectj-autoproxy />
+
+    <context:component-scan base-package="com.zhaoqi" />
+
+
+    <!--RequestMappingHandlerAdapter加入自定义ArgumentsResolver-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="synchronizeOnSession" value="true" />
+        <property name="argumentResolvers">
+            <list>
+                <bean class="com.zhaoqi.component.annotation.SpecialArgumentsResolver"/>
+            </list>
+        </property>
+        <!--注入messageConverters属性，默认的messageConverters无法处理json-->
+        <property name="messageConverters">
+            <list>
+                <ref bean="stringConverter" />
+                <ref bean="jsonConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- 启动SpringMVC的注解功能，完成请求和注解POJO的映射 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <ref bean="stringConverter" />
+            <ref bean="jsonConverter" />
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+
+    <!--字符串转换器-->
+    <bean id="stringConverter"
+          class="com.zhaoqi.component.converter.DotaStringHttpMessageConverter">
+        <constructor-arg value="UTF-8" index="0"/> <!--  避免出现乱码 -->
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- json转换器  application/json -->
+    <bean id="jsonConverter"
+          class="com.zhaoqi.component.converter.DotaJsonHttpMessageConverter">
+        <property name="features">
+            <array>
+                <value>DisableCircularReferenceDetect</value>
+            </array>
+        </property>
+    </bean>
+
+</beans>
