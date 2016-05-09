@@ -56,9 +56,8 @@ public class MainTest {
 
     @Test
     public void test3() {
-        HelloRequest helloRequest = new HelloRequest();
-        helloRequest.setHello("ha!");
-        System.out.println(JsonUtil.toString(commonController.getFeedback(helloRequest)));
+        String s ="{\"hello\":\"hello world!\"}" ;
+        System.out.println(JsonUtil.toObject(s, HelloRequest.class));
 }
 
 }

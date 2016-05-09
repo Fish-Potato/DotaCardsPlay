@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhaoqi.mapper.PlayerMapper" >
+    <resultMap id="BaseResultMap" type="com.zhaoqi.model.common.Player" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="article_id" property="articleId" jdbcType="INTEGER" />
+        <result column="template_key" property="templateKey" jdbcType="VARCHAR" />
+        <result column="order_by" property="orderBy" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime" jdbcType="INTEGER" />
+    </resultMap>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhaoqi.mapper.MemberMapper" >
+    <resultMap id="BaseResultMap" type="com.zhaoqi.model.common.Member" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="player_id" property="playerId" jdbcType="INTEGER" />
+        <result column="member_name" property="memberName" jdbcType="VARCHAR" />
+        <result column="contact_number" property="contactNumber" jdbcType="VARCHAR" />
+        <result column="mail_address" property="mailAddress" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, player_id, member_name, contact_number, mail_address
+    </sql>
+    <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM member
+        WHERE id = #{id,jdbcType=INTEGER}
+    </select>
+</mapper>

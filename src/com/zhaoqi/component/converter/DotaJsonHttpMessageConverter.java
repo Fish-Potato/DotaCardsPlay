@@ -1,8 +1,8 @@
 package com.zhaoqi.component.converter;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.zhaoqi.util.JsonUtil;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -63,7 +63,7 @@ public class DotaJsonHttpMessageConverter extends AbstractHttpMessageConverter<O
             if(bytes == -1) {
                 // base64解码
                 byte[] bytes1 = Base64Utils.decode(baos.toByteArray());
-                return JSON.parseObject(bytes1, 0, bytes1.length, this.charset.newDecoder(), clazz, new Feature[0]);
+                return JsonUtil.toObject(new String(bytes1,0,bytes1.length),clazz);
             }
 
             if(bytes > 0) {
