@@ -5,7 +5,7 @@
 
 2. 接口调用使用json，base64加密
 
-3. 加入Zookeeper
+3. 加入motan和Zookeeper，实现自定义注解的服务注册（不使用配置）
 
 4. 加入数据库
 
