@@ -1,0 +1,23 @@
+<ehcache updateCheck="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.sf.net/ehcache.xsd">
+    <diskStore path="/usr/share/ehcache" />
+
+    <defaultCache maxElementsInMemory="10000000"
+                  eternal="false"
+                  timeToIdleSeconds="0"
+                  timeToLiveSeconds="0"
+                  overflowToDisk="true"
+                  diskPersistent="false"
+                  diskExpiryThreadIntervalSeconds="120"
+                  memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="heroes"
+           maxElementsInMemory="10000"
+           eternal="true"
+           overflowToDisk="false"
+           timeToIdleSeconds="0"
+           timeToLiveSeconds="0"
+           memoryStoreEvictionPolicy="LFU">
+    </cache>
+
+</ehcache>
