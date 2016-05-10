@@ -14,6 +14,9 @@ import java.util.Set;
  * Created by zhaoqi on 2016/4/28.
  */
 public class JsonUtil {
+
+    private static final Set<Object> clazzSet = new HashSet<Object>(){{add(String.class);add(Integer.class);add(Boolean.class);add(Long.class);add(Short.class);}};
+
     public static String toString(Object o) {
         return JSON.toJSONString(o);
     }
@@ -69,7 +72,6 @@ public class JsonUtil {
     }
 
     private static <T> boolean isSimpleType(Class<T> clazz) {
-        Set<Object> clazzSet = new HashSet<Object>(){{add(String.class);add(Integer.class);add(Boolean.class);add(Long.class);add(Short.class);}};
         return clazzSet.contains(clazz);
     }
 }
