@@ -1,4 +1,4 @@
-package com.zhaoqi.component.http;
+package com.zhaoqi.component.webservice;
 
 import com.zhaoqi.util.JsonUtil;
 import org.springframework.util.Base64Utils;

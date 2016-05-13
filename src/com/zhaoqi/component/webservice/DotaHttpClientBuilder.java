@@ -1,4 +1,4 @@
-package com.zhaoqi.component.http;
+package com.zhaoqi.component.webservice;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;

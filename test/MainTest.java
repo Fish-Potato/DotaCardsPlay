@@ -2,7 +2,6 @@ import com.zhaoqi.controller.CommonController;
 import com.zhaoqi.exercises.services.PutSkills;
 import com.zhaoqi.model.hero.DotaHero;
 import com.zhaoqi.model.skill.HeroSkill;
-import com.zhaoqi.restapi.HelloRequest;
 import com.zhaoqi.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +10,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Base64Utils;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.Properties;
 
 /**
  * Created by zhaoqi on 2016/4/27.
@@ -56,8 +57,15 @@ public class MainTest {
 
     @Test
     public void test3() {
-        String s ="{\"hello\":\"hello world!\"}" ;
-        System.out.println(JsonUtil.toObject(s, HelloRequest.class));
-}
+        Properties prop = new Properties();
+
+        try {
+            prop.load(getClass().getResourceAsStream("META-INF/config/zk-server.properties"));
+//            prop.load(new FileInputStream("META-INF/config/zk-server.properties"));
+            System.out.println(prop.getProperty("zkServer"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

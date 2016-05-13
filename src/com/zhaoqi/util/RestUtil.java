@@ -1,6 +1,6 @@
 package com.zhaoqi.util;
 
-import com.zhaoqi.component.http.DotaHttpClient;
+import com.zhaoqi.component.webservice.DotaHttpClient;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
