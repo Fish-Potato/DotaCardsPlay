@@ -2,6 +2,7 @@ import com.zhaoqi.controller.CommonController;
 import com.zhaoqi.exercises.services.PutSkills;
 import com.zhaoqi.model.hero.DotaHero;
 import com.zhaoqi.model.skill.HeroSkill;
+import com.zhaoqi.util.CouponCreateUtil;
 import com.zhaoqi.util.JsonUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,7 @@ import org.springframework.util.Base64Utils;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -66,6 +68,20 @@ public class MainTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test4() {
+        BigInteger b = new BigInteger("245983498537923");
+        for (int i=0;i<10;i++) {
+            printObject(CouponCreateUtil.encodeCouponNumber(b.toString()));
+            b=b.add(new BigInteger("3453452"));
+        }
+//        printObject(CouponCreateUtil.encodeCouponNumber(458945612));
+    }
+
+    public static void printObject(Object o){
+        System.out.println(JsonUtil.toString(o));
     }
 
 }

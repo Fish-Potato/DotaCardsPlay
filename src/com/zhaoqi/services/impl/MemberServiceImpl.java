@@ -1,6 +1,5 @@
 package com.zhaoqi.services.impl;
 
-import com.zhaoqi.component.annotation.ZeuService;
 import com.zhaoqi.mapper.MemberMapper;
 import com.zhaoqi.model.common.Member;
 import com.zhaoqi.services.IMemberService;
