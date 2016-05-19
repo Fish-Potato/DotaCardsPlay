@@ -76,4 +76,8 @@ public class ZeusInitial implements ApplicationContextAware , InitializingBean{
     public void setPort(String port) {
         this.port = port;
     }
+
+    public void setRegister(IRegister register) {
+        this.register = register;
+    }
 }

@@ -6,5 +6,5 @@ package com.zhaoqi.component.webservice;
 public interface ServiceFinder {
 //    <T> T getServiceFinder();
 
-    ServiceInstanceDetail getService(String serviceName);
+    ServiceInstanceDetail getService(String serviceName) throws ServiceNotFoundException;
 }

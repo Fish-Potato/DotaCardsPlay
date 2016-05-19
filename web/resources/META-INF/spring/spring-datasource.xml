@@ -17,7 +17,6 @@
                         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 
-    <context:property-placeholder location="resources/META-INF/config/application.properties" />
     <!--DuridDatasource-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           init-method="init" destroy-method="close">
