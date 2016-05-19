@@ -5,7 +5,8 @@
 
 2. 接口调用使用json，base64加密
 
-3. 加入motan和Zookeeper，实现自定义注解的服务注册（不使用配置）
+3. 使用Zookeeper实现服务发现
+4. 加入Hystrix实现服务调用和服务监控
 
 4. 加入数据库
 
