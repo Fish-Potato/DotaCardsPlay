@@ -34,4 +34,8 @@ public class Invoker implements ServiceCaller{
     public <T> Future<T> futureGet(String serviceName, String param, Class<T> clazz) throws Exception {
         return this.futureGet(serviceName, param, clazz,null);
     }
+
+    public void setServiceFinder(ServiceFinder serviceFinder) {
+        this.serviceFinder = serviceFinder;
+    }
 }

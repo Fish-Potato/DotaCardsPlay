@@ -24,4 +24,18 @@
         <property name="register" value="serviceRegister"/>
     </bean>
 
+    <bean id="serviceClient" class="com.zhaoqi.component.webservice.ZkCuratorServiceClient">
+        <constructor-arg name="basePath" value="/dota/services"/>
+        <constructor-arg name="client" ref="curatorFramework"/>
+    </bean>
+
+    <bean id="serviceFinder" class="com.zhaoqi.component.webservice.ZkServiceFinder">
+        <property name="client" ref="serviceClient"/>
+        <property name="strategy" value=""/>
+    </bean>
+
+    <bean id="serviceCaller" class="com.zhaoqi.component.webservice.Invoker">
+        <property name="serviceFinder" ref="serviceFinder"/>
+    </bean>
+
 </beans>
