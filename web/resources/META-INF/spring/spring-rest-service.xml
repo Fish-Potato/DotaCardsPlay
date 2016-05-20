@@ -31,11 +31,13 @@
 
     <bean id="serviceFinder" class="com.zhaoqi.component.webservice.ZkServiceFinder">
         <property name="client" ref="serviceClient"/>
-        <property name="strategy" value=""/>
+        <property name="strategy" ref="randomStrategy"/>
     </bean>
 
     <bean id="serviceCaller" class="com.zhaoqi.component.webservice.Invoker">
         <property name="serviceFinder" ref="serviceFinder"/>
     </bean>
+
+    <bean id="randomStrategy" class="com.zhaoqi.component.webservice.RandomStrategy"/>
 
 </beans>
