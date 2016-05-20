@@ -117,5 +117,10 @@
     <orderEntry type="library" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.7.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.netflix.hystrix:hystrix-core:1.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.netflix.archaius:archaius-core:0.4.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-configuration:commons-configuration:1.8" level="project" />
+    <orderEntry type="library" name="Maven: io.reactivex:rxjava:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.hdrhistogram:HdrHistogram:2.1.7" level="project" />
   </component>
 </module>

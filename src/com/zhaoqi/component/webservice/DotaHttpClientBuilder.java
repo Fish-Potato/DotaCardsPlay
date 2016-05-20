@@ -25,6 +25,12 @@ public class DotaHttpClientBuilder {
 
 
     public static String sendRequest(String args, String url, RequestMethod method, int connectionTimeout, int readTimeOut) {
+        if (connectionTimeout<=0) {
+            connectionTimeout = 2000;
+        }
+        if (readTimeOut <=0) {
+            readTimeOut =2000;
+        }
         RequestConfig requestConfig = RequestConfig.custom()
                 .setConnectTimeout(connectionTimeout)
                 .setSocketTimeout(readTimeOut).build();
