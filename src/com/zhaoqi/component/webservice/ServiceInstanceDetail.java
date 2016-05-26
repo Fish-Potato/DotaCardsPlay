@@ -29,6 +29,16 @@ public class ServiceInstanceDetail {
         this.serviceGroup = serviceGroup;
     }
 
+    public ServiceInstanceDetail() {
+
+    }
+
+    public ServiceInstanceDetail(String localIp,String localPort,String serviceName) {
+        this.localIp = localIp;
+        this.localPort = localPort;
+        this.serviceName = serviceName;
+    }
+
     public String getLocalHostName() {
         return localHostName;
     }

@@ -1,10 +1,11 @@
 package com.zhaoqi.component.webservice;
 
 
+import java.util.List;
+
+import org.apache.curator.x.discovery.ServiceInstance;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
 
 /**
  * Created by zhaoqi on 2016/5/13.
@@ -24,8 +25,8 @@ public class ZkServiceFinder implements ServiceFinder {
     public ServiceInstanceDetail getService(String serviceName) throws ServiceNotFoundException{
         try {
             List instances =this.client.getServiceByName(serviceName);
-            ServiceInstanceDetail detail = (ServiceInstanceDetail) this.strategy.getServiceInstance(instances);
-            return detail;
+            ServiceInstance serviceInstance = (ServiceInstance) this.strategy.getServiceInstance(instances);
+            return (ServiceInstanceDetail)serviceInstance.getPayload();
         } catch (Exception e) {
             logger.error("get service {} failed {}",serviceName,e);
             throw new ServiceNotFoundException(serviceName);

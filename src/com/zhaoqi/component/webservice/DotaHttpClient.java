@@ -1,8 +1,9 @@
 package com.zhaoqi.component.webservice;
 
-import com.zhaoqi.util.JsonUtil;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.zhaoqi.util.JsonUtil;
 
 /**
  * Created by zhaoqi on 2016/4/28.

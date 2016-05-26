@@ -1,12 +1,13 @@
 package com.zhaoqi.component.webservice.hystrix;
 
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
 import com.zhaoqi.component.webservice.DotaHttpClient;
 import com.zhaoqi.component.webservice.ServiceFinder;
 import com.zhaoqi.component.webservice.ServiceInstanceDetail;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by zhaoqi on 2016/5/20.
@@ -42,7 +43,7 @@ public class HystrixCommonCommand<T> extends HystrixCommand<T> {
 
     @SuppressWarnings("unchecked")
     private T doHttpCall(ServiceInstanceDetail detail) {
-        String url = detail.getLocalIp()+detail.getLocalPort();
+        String url = "http://"+detail.getLocalIp()+":"+detail.getLocalPort()+detail.getClassPath()+detail.getMethodPath();
         return (T) DotaHttpClient.send(param,url, methodType,responseType,0,0);
     }
 

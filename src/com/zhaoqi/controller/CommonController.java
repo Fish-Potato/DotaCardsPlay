@@ -1,14 +1,16 @@
 package com.zhaoqi.controller;
 
-import com.zhaoqi.component.annotation.Json;
-import com.zhaoqi.controller.common.model.ResponseVo;
-import com.zhaoqi.restapi.HelloRequest;
-import com.zhaoqi.services.IMemberService;
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
+import com.zhaoqi.component.annotation.Json;
+import com.zhaoqi.component.annotation.ZeuService;
+import com.zhaoqi.controller.common.model.ResponseVo;
+import com.zhaoqi.restapi.HelloRequest;
+import com.zhaoqi.services.IMemberService;
 
 /**
  * Created by zhaoqi on 2016/5/5.
@@ -22,6 +24,7 @@ public class CommonController {
 
     @RequestMapping("/sayHi")
     @ResponseBody
+    @ZeuService(value = "CommonController.getFeedback")
     public ResponseVo getFeedback(@Json HelloRequest hello){
         ResponseVo responseVo = new ResponseVo();
         responseVo.setMsg("success");
@@ -31,6 +34,7 @@ public class CommonController {
 
     @RequestMapping("/member/getById")
     @ResponseBody
+    @ZeuService(value = "CommonController.getMemberById")
     public ResponseVo getMemberById(@Json Integer id) {
         ResponseVo responseVo = new ResponseVo();
         responseVo.setData(memberService.getById(id));
