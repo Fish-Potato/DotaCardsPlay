@@ -36,6 +36,8 @@
 
     <bean id="serviceCaller" class="com.zhaoqi.component.webservice.Invoker">
         <property name="serviceFinder" ref="serviceFinder"/>
+        <property name="defaultTimeOut" value="${defaultTimeOut}"/>
+        <property name="waitingTimeOut" value="${waitingTimeOut}"/>
     </bean>
 
     <bean id="randomStrategy" class="com.zhaoqi.component.webservice.RandomStrategy"/>
