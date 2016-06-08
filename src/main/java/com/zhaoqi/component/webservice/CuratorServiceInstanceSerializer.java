@@ -1,12 +1,12 @@
 package com.zhaoqi.component.webservice;
 
+import java.io.ByteArrayOutputStream;
+
 import org.apache.curator.x.discovery.ServiceInstance;
 import org.apache.curator.x.discovery.details.InstanceSerializer;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.JavaType;
-
-import java.io.ByteArrayOutputStream;
 
 /**
  * Created by zhaoqi on 2016/5/13.

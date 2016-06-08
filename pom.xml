@@ -251,7 +251,7 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>
         <plugins>
             <plugin>
