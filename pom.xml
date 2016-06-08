@@ -347,6 +347,11 @@
                         <archive>
                             <addMavenDescriptor>false</addMavenDescriptor>
                         </archive>
+                        <webResources>
+                            <resource>
+                                <directory>web</directory>
+                            </resource>
+                        </webResources>
                     </configuration>
                 </plugin>
                 <!-- resource插件, 设定编码 -->
