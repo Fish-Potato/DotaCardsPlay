@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zhaoqi.dotacards</groupId>
     <artifactId>dota-cards-play</artifactId>
-    <packaging>pom</packaging>
+    <packaging>war</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <properties>
         <java.version>1.8</java.version>
@@ -251,6 +251,8 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <outputDirectory>${basedir}/webapp/WEB-INF/classes</outputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
