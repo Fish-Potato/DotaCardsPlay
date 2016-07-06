@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zhaoqi.component.annotation.Json;
+import com.tts.component.annotation.Json;
 import com.zhaoqi.controller.common.model.ResponseVo;
 import com.zhaoqi.restapi.HelloRequest;
 import com.zhaoqi.services.IMemberService;

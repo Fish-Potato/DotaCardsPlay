@@ -27,7 +27,7 @@
         <property name="synchronizeOnSession" value="true" />
         <property name="argumentResolvers">
             <list>
-                <bean class="com.zhaoqi.component.annotation.SpecialArgumentsResolver"/>
+                <bean class="com.tts.component.annotation.SpecialArgumentsResolver"/>
             </list>
         </property>
         <!--注入messageConverters属性，默认的messageConverters无法处理json-->
@@ -50,7 +50,7 @@
 
     <!--字符串转换器-->
     <bean id="stringConverter"
-          class="com.zhaoqi.component.converter.DotaStringHttpMessageConverter">
+          class="com.tts.component.converter.StringHttpMessageConverter">
         <constructor-arg value="UTF-8" index="0"/> <!--  避免出现乱码 -->
         <property name="supportedMediaTypes">
             <list>
@@ -61,7 +61,7 @@
 
     <!-- json转换器  application/json -->
     <bean id="jsonConverter"
-          class="com.zhaoqi.component.converter.DotaJsonHttpMessageConverter">
+          class="com.tts.component.converter.JsonHttpMessageConverter">
         <property name="features">
             <array>
                 <value>DisableCircularReferenceDetect</value>
