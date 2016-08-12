@@ -6,7 +6,7 @@
        xmlns:cache="http://www.springframework.org/schema/cache"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 
-    <context:property-placeholder location="resources/META-INF/config/zk-server.properties,resources/META-INF/config/application.properties" />
+    <context:property-placeholder location="resources/META-INF/config/*.properties" />
     <!-- 启动@AspectJ支持-->
     <aop:aspectj-autoproxy />
 
