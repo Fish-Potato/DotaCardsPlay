@@ -1,6 +1,6 @@
 package com.zhaoqi.util;
 
-import com.tts.component.webservice.BaseHttpClient;
+import com.tts.component.webservice.TTSHttpClient;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
@@ -24,7 +24,7 @@ public class RestUtil {
     }
 
     public static <T> T send(Object params, String url, RequestMethod method, Class<T> clazz,int connectionTimeout,int readTimeOut) {
-        return BaseHttpClient.send(params,url,method,clazz,connectionTimeout,readTimeOut);
+        return TTSHttpClient.send(params,url,method,clazz,connectionTimeout,readTimeOut);
     }
 
 
