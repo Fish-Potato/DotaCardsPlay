@@ -2,6 +2,7 @@ package com.zhaoqi.controller;
 
 import javax.annotation.Resource;
 
+import com.tts.component.cache.TTSCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +24,7 @@ public class CommonController {
 
     @RequestMapping("/sayHi")
     @ResponseBody
+    @TTSCache
     public ResponseVo getFeedback(@Json HelloRequest hello){
         ResponseVo responseVo = new ResponseVo();
         responseVo.setMsg("success");
