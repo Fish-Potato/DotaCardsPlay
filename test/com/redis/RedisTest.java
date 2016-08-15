@@ -44,7 +44,13 @@ public class RedisTest {
     @Test
     public void test1() {
         RedisTestRequest redisTestRequest = JsonUtil.toObject("{\"a\":\"hehe\",\"b\":1,\"c\":[\"yes\",\"no\"],\"helloRequest\":{\"hello\":\"hello world!\"}}",RedisTestRequest.class);
-        System.out.println(redisTestController.getFeedback(redisTestRequest));
+        System.out.println(redisTestController.getCacheTest(redisTestRequest));
+    }
+
+    @Test
+    public void test2() {
+        RedisTestRequest redisTestRequest = JsonUtil.toObject("{\"a\":\"hehe\",\"b\":1,\"c\":[\"yes\",\"no\"],\"helloRequest\":{\"hello\":\"hello world!\"}}",RedisTestRequest.class);
+        System.out.println(redisTestController.cleanCacheTest(redisTestRequest));
     }
 
     private String randomStr(){
