@@ -211,7 +211,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
         <dependency>
             <groupId>com.netflix.hystrix</groupId>
             <artifactId>hystrix-core</artifactId>
