@@ -1,5 +1,6 @@
 package com.zhaoqi.services.impl;
 
+import com.tts.component.datasource.Slave;
 import com.zhaoqi.mapper.MemberMapper;
 import com.zhaoqi.model.common.Member;
 import com.zhaoqi.services.IMemberService;
@@ -25,6 +26,7 @@ public class MemberServiceImpl implements IMemberService {
     private final String CACHE_KEY_HEROES = "heroes";
 
     @Override
+    @Slave()
     public Member getById(int id) {
         Member member;
         Cache cache = cacheManager.getCache(CACHE_KEY_HEROES);

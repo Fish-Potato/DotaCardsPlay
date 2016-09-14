@@ -12,6 +12,7 @@
         </webroots>
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
           <root url="file://$MODULE_DIR$/web" />
           <root url="file://$MODULE_DIR$/web/resources" />
         </sourceRoots>
@@ -33,6 +34,7 @@
       <sourceFolder url="file://$MODULE_DIR$/web" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/web/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/out" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/web/target" />
