@@ -44,7 +44,11 @@ public class EarnestMoneyActor extends UntypedActor {
     private void doEarnestMoneyToDeposit(EarnestMoneyToDeposit earnestMoneyToDeposit) {
         // 减少诚意金
 
-        // 发送消息给定金actor增加定金
+        // method 1:发送消息给定金actor增加定金 (可以实现高并发，但存在数据不一致的问题-->可以通过listener实现补偿或者回滚来实现数据一致性)
+
+        // method 2:用事务和乐观锁，同时更新诚意金和定金的金额(保证数据一致性，考虑到只有诚意金转定金，不会产生死锁，效率也OK)
+
+        // method 3:不需要事务，一个update语句同时更新这两个表（必须同一个库）
     }
 
     private void doCollectEarnestMoney(CollectEarnestMoney earnestMoneyIncrease) {

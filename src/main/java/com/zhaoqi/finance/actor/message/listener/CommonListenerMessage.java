@@ -62,6 +62,7 @@ public class CommonListenerMessage implements Serializable{
         this.orderId = orderId;
     }
 
+    // CommonListenerMessageBuilder 构造CommonListenerMessage
     public static class CommonListenerMessageBuilder {
         CommonListenerMessage commonListenerMessage;
 
