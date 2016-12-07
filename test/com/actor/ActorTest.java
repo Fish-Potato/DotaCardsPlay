@@ -30,4 +30,21 @@ public class ActorTest extends BaseTest{
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void testActorParallel(){
+        long start = System.currentTimeMillis();
+        System.out.println(start);
+        for (int i =0;i<10000;i++) {
+            ActorThread t = new ActorThread(financeActorManager,i);
+            t.start();
+        }
+        System.out.println("耗时"+(System.currentTimeMillis()-start));
+        // 休眠5秒，防止ActorSystem随着主线程结束而shutdown
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

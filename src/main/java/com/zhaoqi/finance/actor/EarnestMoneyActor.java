@@ -63,6 +63,7 @@ public class EarnestMoneyActor extends UntypedActor {
                 .orderId(earnestMoneyIncrease.getOrderId())
                 .build();
         listener.tell(commonListenerMessage,ActorRef.noSender());
+        listener.tell(earnestMoneyIncrease.getAmount().intValue(),ActorRef.noSender());
     }
 
 }
